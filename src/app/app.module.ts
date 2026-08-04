@@ -17,6 +17,11 @@ import { IdeaComponent } from './detectors/fccee-idea/idea.component';
 import { AllegroComponent } from './detectors/fccee-allegro/allegro.component';
 // FCC-hh
 import { FcchhBaselineComponent } from './detectors/fcchh-baseline/fcchh-baseline.component';
+// Custom detector geometries
+import { CustomAllegroComponent } from './detectors/custom-fccee-allegro/custom-allegro.component';
+import { CustomCldComponent } from './detectors/custom-fccee-cld/custom-cld.component';
+import { CustomIdeaComponent } from './detectors/custom-fccee-idea/custom-idea.component';
+import { CustomFcchhBaselineComponent } from './detectors/custom-fcchh-baseline/custom-fcchh-baseline.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -25,6 +30,10 @@ const routes: Routes = [
   { path: 'fccee-idea/:option-version', component: IdeaComponent },
   { path: 'fccee-allegro/:option-version', component: AllegroComponent },
   { path: 'fcchh-baseline', component: FcchhBaselineComponent },
+  { path: 'custom/fccee-allegro', component: CustomAllegroComponent },
+  { path: 'custom/fccee-cld', component: CustomCldComponent },
+  { path: 'custom/fccee-idea', component: CustomIdeaComponent },
+  { path: 'custom/fcchh-baseline', component: CustomFcchhBaselineComponent },
 ];
 
 @NgModule({
@@ -35,6 +44,10 @@ const routes: Routes = [
     IdeaComponent,
     AllegroComponent,
     FcchhBaselineComponent,
+    CustomAllegroComponent,
+    CustomCldComponent,
+    CustomIdeaComponent,
+    CustomFcchhBaselineComponent,
     PlaygroundComponent,
   ],
   imports: [
