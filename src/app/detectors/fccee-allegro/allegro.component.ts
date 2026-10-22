@@ -31,6 +31,9 @@ export class AllegroComponent implements OnInit {
     'phoenix-menu',
   );
 
+  /** Geometry variant folder under `assets/detectors`. */
+  variant = '';
+
   loaded = false;
   loadingProgress = 0;
 
@@ -42,6 +45,7 @@ export class AllegroComponent implements OnInit {
     let optionVersion;
     this.route.params.subscribe((params) => {
       optionVersion = params['option-version'];
+      this.variant = params['variant'];
     });
     if (optionVersion === undefined) {
       optionVersion = 'o1_v03';
@@ -93,7 +97,11 @@ export class AllegroComponent implements OnInit {
 
     // Load latest detector geometry from the FCCSW wesite
     this.eventDisplay.loadGLTFGeometry(
-      'assets/detectors/ALLEGRO_' + optionVersion + '.gltf',
+      'assets/detectors/' +
+        this.variant +
+        '/ALLEGRO_' +
+        optionVersion +
+        '.gltf',
       'ALLEGRO',
       undefined,
       1,

@@ -24,7 +24,7 @@
 <app-experiment-info experiment="ild"
                      logo="assets/images/ild_logo_transparent.png"
                      url="https://fcc.web.cern.ch/"
-                     tagline="FCC-ee ILD detector concept"></app-experiment-info>
+                     [tagline]="'FCC-ee ILD detector concept (' + variant + ')'"></app-experiment-info>
 <!-- Phoenix menu at the top right -->
 <app-phoenix-menu [rootNode]="phoenixMenuRoot"></app-phoenix-menu>
 <div id="eventDisplay"></div>

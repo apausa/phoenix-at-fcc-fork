@@ -11,6 +11,7 @@ import {
   ClippingSetting,
   PhoenixMenuNode,
 } from 'phoenix-event-display';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-fcchh-baseline',
@@ -20,6 +21,7 @@ import {
 })
 export class FcchhBaselineComponent implements OnInit {
   private eventDisplay = inject(EventDisplayService);
+  private route = inject(ActivatedRoute);
 
   events: unknown;
 
@@ -29,6 +31,9 @@ export class FcchhBaselineComponent implements OnInit {
     'phoenix-menu',
   );
 
+  /** Geometry variant folder under `assets/detectors`. */
+  variant = '';
+
   loaded = false;
   loadingProgress = 0;
 
@@ -37,6 +42,10 @@ export class FcchhBaselineComponent implements OnInit {
   ];
 
   ngOnInit(): void {
+    this.route.params.subscribe((params) => {
+      this.variant = params['variant'];
+    });
+
     // Create the event display configuration
     const configuration: Configuration = {
       eventDataLoader: new PhoenixLoader(),
@@ -82,7 +91,7 @@ export class FcchhBaselineComponent implements OnInit {
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
     this.eventDisplay.loadGLTFGeometry(
-      'assets/detectors/FCChh_DectMaster.gltf',
+      'assets/detectors/' + this.variant + '/FCChh_DectMaster.gltf',
       'FCC-hh',
       undefined,
       1,

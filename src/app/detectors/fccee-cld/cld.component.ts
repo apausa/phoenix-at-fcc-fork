@@ -31,6 +31,9 @@ export class CldComponent implements OnInit {
     'phoenix-menu',
   );
 
+  /** Geometry variant folder under `assets/detectors`. */
+  variant = '';
+
   loaded = false;
   loadingProgress = 0;
 
@@ -42,6 +45,7 @@ export class CldComponent implements OnInit {
     let optionVersion;
     this.route.params.subscribe((params) => {
       optionVersion = params['option-version'];
+      this.variant = params['variant'];
     });
     if (optionVersion === undefined) {
       optionVersion = 'o1_v03';
@@ -92,7 +96,7 @@ export class CldComponent implements OnInit {
 
     // Load detector geometry (assuming the file exists in the `src/assets` directory of the app)
     this.eventDisplay.loadGLTFGeometry(
-      'assets/detectors/CLD_' + optionVersion + '.gltf',
+      'assets/detectors/' + this.variant + '/CLD_' + optionVersion + '.gltf',
       'CLD',
       undefined,
       1,
