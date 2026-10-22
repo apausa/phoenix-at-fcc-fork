@@ -22,11 +22,14 @@ import { FcchhBaselineComponent } from './detectors/fcchh-baseline/fcchh-baselin
 const routes: Routes = [
   { path: '', component: MainComponent },
   { path: 'playground', component: PlaygroundComponent },
-  { path: 'fccee-cld/:option-version', component: CldComponent },
-  { path: 'fccee-idea/:option-version', component: IdeaComponent },
-  { path: 'fccee-allegro/:option-version', component: AllegroComponent },
-  { path: 'fccee-ild', component: IldComponent },
-  { path: 'fcchh-baseline', component: FcchhBaselineComponent },
+  { path: ':variant/fccee-cld/:option-version', component: CldComponent },
+  { path: ':variant/fccee-idea/:option-version', component: IdeaComponent },
+  {
+    path: ':variant/fccee-allegro/:option-version',
+    component: AllegroComponent,
+  },
+  { path: ':variant/fccee-ild', component: IldComponent },
+  { path: ':variant/fcchh-baseline', component: FcchhBaselineComponent },
 ];
 
 @NgModule({

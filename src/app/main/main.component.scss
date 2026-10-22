@@ -7,6 +7,13 @@ h1 {
   max-width: 24em;
 }
 
+.variant-title {
+  font-family: Circular;
+  color: var(--phoenix-text-color);
+  text-align: center;
+  margin-top: 1.5em;
+}
+
 .row {
   justify-content: center;
 }
