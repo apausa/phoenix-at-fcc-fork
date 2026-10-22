@@ -33,9 +33,9 @@ export class MainComponent implements AfterViewInit {
   variants: GeometryVariant[] = [
     { id: '1-blue-volumes', title: '1. Blue volumes' },
     { id: '2-gray-volumes', title: '2. Gray volumes' },
-    { id: '3-shrinked-volumes', title: '3. Shrinked volumes' },
-    { id: '4-resolved-references', title: '4. Resolved references' },
-    { id: '5-filled-volumes', title: '5. Filled volumes' },
+    { id: '3-resolved-references', title: '3. Resolved references' },
+    { id: '4-shrinked-volumes', title: '4. Shrinked volumes' },
+    { id: '5-colored-volumes', title: '5. Colored volumes' },
   ];
 
   detectors: DetectorCard[] = [
@@ -59,12 +59,12 @@ export class MainComponent implements AfterViewInit {
     },
     {
       name: 'IDEA',
-      version: 'o1_v02',
+      version: 'o1_v03',
       description: 'Explore events in the FCC-ee IDEA detector concept.',
       logo: 'assets/images/idea_logo_transparent.png',
       logoAlt: 'FCC-ee IDEA',
-      path: 'fccee-idea/o1_v02',
-      rootFile: 'IDEA_o1_v02.root',
+      path: 'fccee-idea/o1_v03',
+      rootFile: 'IDEA_o1_v03.root',
     },
     {
       name: 'ILD',
